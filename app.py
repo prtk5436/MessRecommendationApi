@@ -14,7 +14,7 @@ def index():
 @app.route('/mess', methods=['GET'])
 def recommend_movies():
     res = recommendation.results(request.args.get('title'))
-    return jsonify({'recommended': res})
+    return jsonify(res)
 
 
 if __name__ == '__main__':
