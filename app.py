@@ -8,13 +8,13 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return "ENTER MESS NAME AT THE END OF URL......for example: 'https://plp-recommendation.herokuapp.com/mess?title=amul'  here, we have type 'amul' mess name in this format: '/mess?title=amul'"
+    return "ENTER MESS NAME AT THE END OF URL......for example: 'https://mess-recommendation-api.herokuapp.com/mess?title=amul'  here, we have type 'amul' mess name in this format: '/mess?title=amul'"
 
 
 @app.route('/mess', methods=['GET'])
 def recommend_movies():
     res = recommendation.results(request.args.get('title'))
-    return jsonify({'recommended': res})
+    return jsonify(res)
 
 
 if __name__ == '__main__':
